@@ -1,0 +1,3 @@
+# Assessment data stays local — do not commit personal assessment files
+*.json
+*.docx

@@ -1,0 +1,139 @@
+{
+  "_note": "This is an anonymized example showing the full assessment JSON schema. Replace with your actual assessment data.",
+  "date": "2026-03-19",
+  "frameworks": {
+    "anthropic_4d": {
+      "delegation": {
+        "rating": "Advanced",
+        "evidence": [
+          "Delegates full feature implementation cycles to Claude Code with high autonomy (review-only involvement)",
+          "Breaks complex projects into well-scoped sub-tasks before handing off",
+          "Retains decisions about architecture, design tradeoffs, and external integrations"
+        ],
+        "delta": "Improved: Practitioner → Advanced"
+      },
+      "description": {
+        "rating": "Advanced",
+        "evidence": [
+          "Prompts include explicit constraints (tone, format, file scope)",
+          "Provides examples when introducing new patterns",
+          "Uses CLAUDE.md governance files to encode persistent context across sessions"
+        ],
+        "delta": "No change"
+      },
+      "discernment": {
+        "rating": "Practitioner",
+        "evidence": [
+          "Catches logical errors in generated code during review",
+          "Pushes back on over-engineered solutions",
+          "Occasionally accepts prose outputs without revision — artifact-passivity noted in Claude.ai usage"
+        ],
+        "delta": "No change"
+      },
+      "diligence": {
+        "rating": "Practitioner",
+        "evidence": [
+          "Tests generated scripts before deploying to production",
+          "Verifies API outputs against documentation",
+          "Less consistent on fact-checking prose outputs from Claude.ai"
+        ],
+        "delta": "No change"
+      }
+    },
+    "yegge": {
+      "stage": 5.5,
+      "stage_label": "Agentic workflows / early multi-agent",
+      "evidence_for_current": [
+        "Multiple Claude Code projects running with high autonomy",
+        "Automated pipelines (cron-triggered) run without human intervention",
+        "Session-open/close protocols encode multi-repo coordination",
+        "Skills system enables reusable agentic workflows"
+      ],
+      "evidence_for_next": [
+        "Some parallel Claude Code usage across repos, but not yet systematically coordinated",
+        "No shared state or message-passing between agents yet"
+      ],
+      "delta": "Advanced: Stage 5 → Stage 5.5"
+    }
+  },
+  "inventory": {
+    "claude_code_projects": [
+      {
+        "name": "daily-news-brief",
+        "description": "Automated daily news briefing with weather, Claude synthesis, and audio narration",
+        "status": "active",
+        "autonomy": "High"
+      },
+      {
+        "name": "portfolio-site",
+        "description": "Personal portfolio with dual admin/public modes, Supabase backend",
+        "status": "active",
+        "autonomy": "Medium"
+      },
+      {
+        "name": "habit-tracker",
+        "description": "CLI tool for tracking daily habits",
+        "status": "maintained",
+        "autonomy": "Low"
+      }
+    ],
+    "automated_workflows": [
+      {
+        "name": "Daily News Brief",
+        "trigger": "GitHub Actions cron — hourly, fires at 6 AM local time",
+        "description": "Fetches weather, runs Claude web search across 6 news sections, generates HTML + MP3, emails via Resend"
+      },
+      {
+        "name": "Morning Sync Report",
+        "trigger": "Windows Task Scheduler — 7 AM daily",
+        "description": "Scans all repos for sync status, workflow failures, pending to-dos; writes report to Desktop"
+      }
+    ],
+    "other_ai_tasks": [
+      {
+        "name": "ChatGPT research drafts",
+        "trigger": "Ad hoc",
+        "description": "Used for exploratory research and first-draft prose; outputs typically revised before use"
+      },
+      {
+        "name": "Zapier newsletter digest",
+        "trigger": "Weekly, Monday 8 AM",
+        "description": "Zapier + AI step to summarize RSS feeds into a digest email"
+      }
+    ],
+    "new_since_last": [
+      "Added travel timezone detection to daily brief via Google Calendar ICS",
+      "Built session-open/close protocol with multi-repo coordination",
+      "Published spinner-verbs-skill as standalone public repo",
+      "Launched portfolio trainer feature with Supabase persistence"
+    ]
+  },
+  "development_edges": [
+    {
+      "id": 1,
+      "title": "Structured discernment for prose outputs",
+      "description": "Currently catches errors well in code outputs but applies less scrutiny to prose from Claude.ai",
+      "target_behavior": "For any prose output used externally (emails, posts, documents), add one explicit revision pass before use — even if the output looks polished",
+      "status": "open"
+    },
+    {
+      "id": 2,
+      "title": "Multi-agent coordination pattern",
+      "description": "Running parallel Claude Code instances on independent repos, but not yet passing context or outputs between them",
+      "target_behavior": "Implement at least one workflow where Agent A output feeds Agent B input, with explicit handoff documented in a shared state file",
+      "status": "in-progress"
+    },
+    {
+      "id": 3,
+      "title": "Prompt specificity for ambiguous tasks",
+      "description": "High specificity when context is clear, but vague prompts observed when exploring new domains",
+      "target_behavior": "Before any exploratory prompt in a new domain, add one constraint: either a format requirement, a length limit, or an example of the desired output style",
+      "status": "resolved"
+    }
+  ],
+  "raw_summaries": {
+    "claude_code": "3 active projects, 2 in maintenance. Autonomy is high on the automated pipeline (runs fully unattended), medium on the portfolio (collaborative), low on the habit tracker (directing each step). Two automation workflows: daily brief cron and morning sync. Yegge estimate: 5.5 — solid agentic usage but no formal multi-agent coordination yet.",
+    "other_ai_tools": "ChatGPT used ad hoc for exploratory research and first drafts. Zapier newsletter digest runs weekly. No other AI platforms in active use. Automation complexity: low (single-step triggers, no multi-step conditional logic).",
+    "claude_ai_notes": "Noticed I tend to accept Claude.ai prose outputs more readily than code outputs — less likely to push back or revise. Used AI heavily for planning tasks (architecture decisions, project scoping) this quarter, which felt like a good use. Started prompts vaguely when exploring new problem spaces, then refined after first output. Meta-conversation: spent one session just asking Claude how to improve my prompting for a specific domain."
+  }
+}
