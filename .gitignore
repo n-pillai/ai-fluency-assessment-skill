@@ -1,0 +1,5 @@
+assessments/*.json
+assessments/*.docx
+__pycache__/
+*.pyc
+.DS_Store
