@@ -52,7 +52,7 @@ def set_cell_bg(cell, color: RGBColor):
     tc = cell._tc
     tcPr = tc.get_or_add_tcPr()
     shd = OxmlElement("w:shd")
-    hex_color = f"{color.red:02X}{color.green:02X}{color.blue:02X}"
+    hex_color = f"{color[0]:02X}{color[1]:02X}{color[2]:02X}"
     shd.set(qn("w:val"), "clear")
     shd.set(qn("w:color"), "auto")
     shd.set(qn("w:fill"), hex_color)
@@ -86,7 +86,7 @@ def add_heading(doc, text, level=1):
         bottom.set(qn("w:val"), "single")
         bottom.set(qn("w:sz"), "6")
         bottom.set(qn("w:space"), "1")
-        bottom.set(qn("w:color"), f"{GOLD.red:02X}{GOLD.green:02X}{GOLD.blue:02X}")
+        bottom.set(qn("w:color"), f"{GOLD[0]:02X}{GOLD[1]:02X}{GOLD[2]:02X}")
         pBdr.append(bottom)
         pPr.append(pBdr)
     elif level == 2:
