@@ -9,17 +9,9 @@ Tracks progress over time with structured JSON history and generates dated `.doc
 
 ## Installation
 
-Copy `SKILL.md` into your Claude Code commands folder:
-
-```bash
-# macOS/Linux
-cp SKILL.md ~/.claude/commands/assess-fluency.md
-
-# Windows
-copy SKILL.md %USERPROFILE%\.claude\commands\assess-fluency.md
-```
-
-Copy the full skill directory (for report generation):
+Copy the full skill directory into your Claude Code skills folder — the skill
+needs its companion files (`REFERENCE.md`, `templates/`, `assessments/`), so
+copying `SKILL.md` alone will not work:
 
 ```bash
 # macOS/Linux
@@ -37,7 +29,10 @@ pip install python-docx
 
 ## Usage
 
-Run `/assess-fluency` in Claude Code to start a full assessment.
+Ask Claude Code to run your AI fluency assessment (e.g. "assess my AI fluency"
+or "run a fluency check") — the skill is picked up by description match. The
+flags below can be given in the same request (e.g. "run a quick fluency
+assessment").
 
 | Command | What it does |
 |---|---|
