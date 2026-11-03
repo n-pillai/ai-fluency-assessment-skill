@@ -1,9 +1,9 @@
 # AI Fluency Assessment Skill
 
-A Claude Code skill for quarterly assessment of AI fluency across two frameworks:
+A Claude Code skill for periodic assessment of AI fluency across two frameworks:
 
 - **Anthropic's 4D AI Fluency Framework** — Delegation, Description, Discernment, Diligence
-- **Yegge's 8-Stage Developer-Agent Evolution Model** — Stage 1 (zero AI usage) through Stage 8 (own orchestrator)
+- **Steve Yegge's 8-Stage Developer-Agent Evolution Model** — Stage 1 (zero AI usage) through Stage 8 (own orchestrator)
 
 Tracks progress over time with structured JSON history and generates dated `.docx` reports.
 
